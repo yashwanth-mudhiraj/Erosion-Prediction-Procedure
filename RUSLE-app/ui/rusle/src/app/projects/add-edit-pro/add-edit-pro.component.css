@@ -1,0 +1,15 @@
+.file-info {
+    color: #999;
+    font-family: Lato;
+    margin-left: 0.5rem;
+  }
+
+  .close-button{
+    float: right;
+    border: none;
+    background: none;
+  }
+  
+  .close-icon {
+    transition: 1s ease-in-out;
+  }

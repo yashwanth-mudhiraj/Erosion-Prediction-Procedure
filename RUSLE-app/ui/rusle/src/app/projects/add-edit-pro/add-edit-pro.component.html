@@ -1,0 +1,65 @@
+<div class="col-sm-10">
+  <p>Select an existing project to add a sub-site</p>
+  <select class="form-select" [(ngModel)]="proj" (change)="projSelect(proj)">
+    <option [ngValue]=0>Select</option>
+    <option *ngFor="let proj of projectList" [ngValue]="proj">{{proj.ProjectName}}</option>
+  </select>
+
+</div>
+
+<div class="form-froup row">
+  <label class="col-sm-4 col-form-label"><strong style="font-size: medium;">Project Name</strong></label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="Name" [disabled]="proFlag" placeholder="Enter Project Name">
+  </div>
+  <label class="col-sm-5 col-form-label"><strong style="font-size: medium;">Project Description</strong></label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="Desc" [disabled]="proFlag" placeholder="Enter Project Description">
+  </div>
+
+  <label class="col-sm-4 col-form-label"><strong style="font-size: medium;">Subsite Name</strong></label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="SubsiteName" placeholder="Enter Subsite Name">
+  </div>
+  <label class="col-sm-5 col-form-label"><strong style="font-size: medium;">Subsite Description</strong></label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="SubsiteDesc" placeholder="Enter Subsite Description">
+  </div>
+
+  <label class="col-sm-4 col-form-label"><strong style="font-size: medium;">Project start date</strong></label>
+  <div class="col-sm-10">
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Choose a start Date</mat-label>
+      <input matInput [matDatepicker]="From_date" >
+      <mat-datepicker-toggle matSuffix [for]="From_date"></mat-datepicker-toggle>
+      <mat-datepicker #From_date disabled="false"></mat-datepicker>
+    </mat-form-field> -->
+
+    <input type="text" class="form-control" [(ngModel)]="Start_date" placeholder="mm/dd/yyy">
+  </div>
+
+  <label class="col-sm-6 col-form-label"><strong style="font-size: medium;">Estimated end date</strong></label>
+  <div class="col-sm-10">
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Choose an end Date</mat-label>
+      <input matInput [matDatepicker]="To_date" >
+      <mat-datepicker-toggle matSuffix [for]="To_date"></mat-datepicker-toggle>
+      <mat-datepicker #To_date disabled="false"></mat-datepicker>
+    </mat-form-field> -->
+
+    <input type="text" class="form-control" [(ngModel)]="End_date" placeholder="mm/dd/yyy">
+
+  </div>
+
+</div>
+
+  <button class="btn btn-primary">
+  <label>
+    <i class="material-icons">file_upload</i> Upload Image<input type="file" style="display: none;" id="uploadFile"
+      (change)="upload($event)" name="uploadFile" accept=".png, .jpg, .jpe">
+  </label>
+</button>
+<span class="file-info"> {{ fileInfo }} </span>
+
+  <button class="btn btn-primary float-right" (click)="addPro(this)">Add</button>
+
